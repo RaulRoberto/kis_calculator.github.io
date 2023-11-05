@@ -1,0 +1,35 @@
+image: rauldias98/maven-webdrivers
+stages:
+  - test-factorial
+  - report
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+tests:
+  stage: test-factorial
+  allow_failure: true
+  script:
+    - echo "Tests Factorial Calculator"
+    - mvn test -Dbrowser="chrome"
+
+report-job:
+  stage: report
+  script:
+    - echo "Generating tests report"
+    - echo $JAVA_HOME
+    - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+    - echo $JAVA_HOME
+    - mvn cluecumber-report:reporting
+  artifacts:
+    when: always
+    name: "target"
+    paths:
+      - target/formated-report
+      - target/reports
+    expire_in: 5 days
