@@ -23,6 +23,9 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome-stable_current_amd64.deb
 
+      - name: Make sure chromedriver version matches the GitHub Runner's Google Chrome version
+        uses: jamesmortensen/chromedriver-matcher-action@v1
+
       - uses: nanasess/setup-chromedriver@v2
       - run: |
           export DISPLAY=:99
