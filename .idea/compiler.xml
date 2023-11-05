@@ -6,14 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SeleniumWebdriverQazandoBase" />
-        <module name="projetogitiniciante" />
-        <module name="MasterClassQazando" />
-        <module name="IAGSeleniumTests" />
+        <module name="SeleniumTests" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DevopsSeleniumWebdriverQazando" target="1.8" />
+      <module name="SeleniumTests" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
