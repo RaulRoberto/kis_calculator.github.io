@@ -1,7 +1,7 @@
 name: Automated Tests
 
 on:
-  pull_request:
+  commit:
     branches: main
 
 jobs:
